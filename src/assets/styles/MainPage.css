@@ -1,0 +1,86 @@
+/* General container */
+.main-page {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+}
+
+/* Page title */
+.main-page-title {
+  text-align: center;
+  font-size: 4rem;
+  margin-bottom: 20px;
+  color: chocolate;
+  text-shadow: -4px 10px 10px chocolate;
+}
+
+/* Article container */
+.articles-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  width: 80%;
+}
+
+/* Article card */
+.article-card {
+  width: 300px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: antiquewhite;
+}
+
+.article-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Article image */
+.article-image {
+  width: 30px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Article title */
+.article-title {
+  font-size: 1.2rem;
+  margin: 10px 0;
+  color: #555;
+}
+
+/* View button */
+.view-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.view-button:hover {
+  background-color: #0056b3;
+}
+
+.mainPageContainer {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  margin: 0 6% 0 6%;
+  padding-top: 2%;
+}
+
+.imgContainer {
+  display: flex;
+  flex-direction: column;
+}
