@@ -1,0 +1,112 @@
+/* General container styling */
+.main.container {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: "Roboto", Arial, sans-serif; /* More modern font stack */
+}
+
+/* Contact header styling */
+.contact__wrap {
+  font-size: 5rem;
+  padding: 3%;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-family: "Roboto", sans-serif; /* Consistent font usage */
+  color: #ecf0f1; /* Lighter shade of chocolate */
+  letter-spacing: 1px; /* Adding letter-spacing for modern feel */
+}
+
+/* Contact container layout */
+.contactContainer {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem; /* Added gap for spacing between containers */
+  flex-wrap: wrap; /* Ensures responsiveness */
+}
+
+/* Left container styling */
+.leftContainer {
+  flex: 0 0 40%; /* Adjust the flex to 40% of the container width */
+  padding: 2% 4%; /* Reduced padding */
+  margin: 2% 0; /* Reduced margin for a more compact look */
+  background-color: #f9f5eb; /* Softer neutral background */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Softer shadow */
+  text-align: center;
+  height: min-content;
+}
+
+.leftContainer h2 {
+  font-size: 3.5rem; /* Slightly smaller for better proportion */
+  color: #444; /* Darker shade for better contrast */
+  margin-bottom: 1.5rem;
+}
+
+.leftContainer p {
+  font-size: 1.8rem;
+  color: #555;
+  line-height: 1.8;
+}
+
+/* Right container styling */
+.rightContainer {
+  flex: 1;
+  margin: 2% 0;
+  padding: 2% 3%;
+  background-color: #f9f5eb; /* Softer neutral background */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Softer shadow */
+  height: min-content;
+}
+
+/* Form styling */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem; /* Increased gap for better form spacing */
+}
+
+.form-group label {
+  font-size: 1.6rem; /* Slightly larger for better readability */
+  color: #333;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 1.2rem;
+  font-size: 1.6rem; /* Consistent font size for inputs */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #0066cc; /* Lighter blue for focus state */
+  outline: none;
+}
+
+textarea {
+  resize: vertical; /* Limit resize to vertical only */
+}
+
+/* Button styling */
+.btn {
+  padding: 1rem 2rem;
+  background-color: #6a4e23; /* Lighter chocolate */
+  color: #ffffff;
+  font-size: 1.6rem;
+  font-weight: bold;
+  text-align: center;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+  background-color: #4e3b1f; /* Darker chocolate on hover */
+  transform: translateY(-2px); /* Subtle hover animation */
+}
