@@ -8,14 +8,15 @@ const bcrypt = require("bcrypt");
 // Execute a query to the database
 const db = dbSingleton.getConnection();
 
-router.use(
+app.use(
   session({
     secret: "your_secret_key",
     resave: false,
-    saveUninitialized: true,
-    cookie: { secure: false }, // For HTTPS use true
+    saveUninitialized: false,
+    cookie: { secure: false, httpOnly: true, maxAge: 3600000 }, // 1 hour
   })
 );
+
 
 router.get("/showusers", (req, res) => {
   const qString = "SELECT * FROM users";
@@ -63,6 +64,64 @@ router.post("/register", async (req, res) => {
     } catch (error) {
       res.status(500).json({ error: "Server error" });
     }
+  });
+});
+
+// התחברות משתמש
+router.post("/login", async (req, res) => {
+  const { username, password } = req.body;
+
+  // בדיקה שהשדות קיימים
+  if (!username || !password) {
+    return res
+      .status(400)
+      .json({ error: "Username and password are required." });
+  }
+
+  // שליפת המשתמש מבסיס הנתונים לפי שם משתמש
+  const query = "SELECT * FROM users WHERE username = ?";
+  db.query(query, [username], async (error, results) => {
+    if (error) {
+      res.status(500).send(error);
+      return;
+    }
+
+    // בדיקה אם המשתמש קיים
+    if (results.length === 0) {
+      res.status(401).json({ error: "Invalid username or password." });
+      return;
+    }
+
+    const user = results[0];
+
+    // השוואת הסיסמה מול ה-Hash
+    try {
+      const isMatch = await bcrypt.compare(password, user.password);
+      if (!isMatch) {
+        res.status(401).json({ error: "Invalid username or password." });
+        return;
+      }
+
+      // שמירת פרטי המשתמש ב-Session
+      req.session.user = {
+        id: user.id,
+        username: user.username,
+      };
+
+      res.json({ message: "Logged in successfully." });
+    } catch (error) {
+      res.status(500).json({ error: "Server error" });
+    }
+  });
+});
+
+router.get("/logout", (req, res) => {
+  req.session.destroy((err) => {
+    if (err) {
+      return res.status(500).json({ error: "Error terminating session." });
+    }
+    res.clearCookie("connect.sid"); // Clears the session cookie
+    res.json({ message: "Session ended successfully." });
   });
 });
 
