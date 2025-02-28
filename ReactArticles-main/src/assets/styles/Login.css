@@ -22,7 +22,6 @@
   justify-content: flex-start;
   align-items: center;
   width: 100%;
- 
 }
 
 /* Login Form Container */
@@ -152,6 +151,125 @@
   box-shadow: 0 10px 20px rgba(230, 126, 34, 0.4); /* Glowing effect on hover */
 }
 
+/* Sign Up Modal */
+
+.signup-form{
+    gap: 1.5rem;
+  border-radius: 8px;
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.7
+  ); /* Dark, tough semi-transparent background */
+  width: 100%;
+  padding: 20px;
+  box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.7); /* Dark shadow for depth */
+  backdrop-filter: blur(5px); /* Blur Effect */
+  border: 2px solid #34495e; /* Steel gray border for toughness */
+}
+
+.signup-modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  z-index: 999;
+}
+
+.signup-modal-content {
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 8px;
+  padding: 30px;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+  backdrop-filter: blur(5px);
+  border: 2px solid #34495e;
+}
+
+.signup-modal-content h2 {
+  text-align: center;
+  color: #ecf0f1;
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+.signup-modal-content p {
+  text-align: center;
+  color: #ecf0f1;
+  font-size: 1.5rem;
+  margin: 0px;
+}
+.signup-modal-content .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.signup-modal-content .form-group label {
+  color: #ecf0f1;
+  font-weight: bold;
+}
+
+.signup-modal-content input {
+  padding: 10px;
+  border-radius: 4px;
+  border: 2px solid #7f8c8d;
+  background-color: #34495e;
+  color: #ecf0f1;
+}
+
+.signup-modal-content input:focus {
+  outline: none;
+  border-color: #e67e22;
+  box-shadow: 0 0 5px rgba(230, 126, 34, 0.5);
+}
+
+.signup-modal-content button {
+  width: 100%;
+  padding: 12px;
+  background-color: #e67e22;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  font-size: 1.2rem;
+  font-weight: bolder;
+  text-transform: uppercase;
+}
+
+.signup-modal-content button:hover {
+  background-color: #d35400;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(230, 126, 34, 0.4);
+}
+
+/* Close Button */
+.close-btn {
+  font-size: 2rem;
+  color: #ecf0f1;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+/* Success Message */
+.success-message {
+  color: #2ecc71; /* Green for success */
+  text-align: center;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
 /* Responsive Design */
 @media (max-width: 600px) {
   .LoginP {
@@ -166,4 +284,9 @@
   .password-form-control {
     width: 100%;
   }
+
+   .signup-modal-content {
+    width: 90%;
+  }
 }
+
