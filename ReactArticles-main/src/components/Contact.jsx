@@ -3,18 +3,16 @@ import "../assets/styles/Contact.css";
 function Contact() {
   return (
     <div className="main container">
-      <h1 className="contact__wrap">Contact Us</h1>
+      <h1 className="Hcss">Contact Us</h1>
       <div className="contactContainer">
-        <div className="leftContainer">
+       
           <h2>Getting in touch is easy!</h2>
           <p>
             For any question on any topic.
             <br />
             You are welcome to send us an email.
           </p>
-        </div>
-        <div className="rightContainer">
-          <form>
+          <form className="contact-form">
             <div class="form-group">
               <label for="name">Name:</label>
               <input
@@ -25,7 +23,6 @@ function Contact() {
                 required
               />
             </div>
-
             <div class="form-group">
               <label for="email">Email:</label>
               <input
@@ -36,7 +33,6 @@ function Contact() {
                 required
               />
             </div>
-
             <div class="form-group">
               <label for="message">Message:</label>
               <textarea
@@ -48,14 +44,13 @@ function Contact() {
               ></textarea>
             </div>
             <div>
-              <button type="submit" class="btn btn-primary">
+              <button type="submit" class="btn-send">
                 Send Message
               </button>
             </div>
           </form>
         </div>
       </div>
-    </div>
   );
 }
 
